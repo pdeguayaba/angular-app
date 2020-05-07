@@ -9,7 +9,9 @@ export class UserComponent implements OnInit {
   // Properties
   user: User;
   // Constructor
-  constructor() {
+  constructor() {}
+
+  ngOnInit(): void {
     this.user = {
       firstName: 'Edwin',
       lastName: 'Estrella',
@@ -21,6 +23,4 @@ export class UserComponent implements OnInit {
       },
     };
   }
-
-  ngOnInit(): void {}
 }
