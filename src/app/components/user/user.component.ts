@@ -6,26 +6,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user.component.css'],
 })
 export class UserComponent implements OnInit {
-  // Constructor
-  constructor() {
-    //this.sayHello();
-    console.log('Before:' + this.age);
-    this.hasBirthday();
-    console.log('Now:' + this.age);
-  }
-
-  sayHello() {
-    console.log(`Hello ${this.firstName}`);
-  }
-
-  hasBirthday() {
-    this.age += 1;
-  }
-
   // Properties
   firstName = 'Edwin';
   lastName = 'Estrella';
   age = 25;
+  address = {
+    street: 'Calle Tamarindo',
+    city: 'San Antonio',
+    state: 'PR',
+  };
+
+  // Constructor
+  constructor() {}
+
+  showAge() {
+    return this.age;
+  }
 
   ngOnInit(): void {}
 }
