@@ -9,7 +9,7 @@ import { flatten } from '@angular/compiler';
 })
 export class UsersComponent implements OnInit {
   users: User[];
-  showExtended: boolean = !true;
+  showExtended: boolean = true;
   loaded: boolean = false;
   enableAdd: boolean = true;
 
@@ -28,6 +28,7 @@ export class UsersComponent implements OnInit {
         },
         isActive: true,
         registered: new Date('02/02/2018 17:00:00'),
+        hide: true,
       },
       {
         firstName: 'John',
@@ -40,6 +41,7 @@ export class UsersComponent implements OnInit {
         },
         isActive: false,
         registered: new Date('03/12/2020 07:00:00'),
+        hide: true,
       },
       // {
       //   firstName: 'David',
@@ -60,6 +62,7 @@ export class UsersComponent implements OnInit {
       },
       isActive: true,
       registered: new Date('04/19/2020 15:50:00'),
+      hide: true,
     });
   }
 
@@ -67,7 +70,7 @@ export class UsersComponent implements OnInit {
     this.users.push(user);
   }
 
-  fireEvent(e) {
-    console.log(e.type);
-  }
+  // toggleHide(user: User) {
+  //   user.hide = !user.hide;
+  // }
 }
