@@ -11,12 +11,7 @@ export class UsersComponent implements OnInit {
   user: User = {
     firstName: '',
     lastName: '',
-    age: null,
-    address: {
-      street: '',
-      city: '',
-      state: '',
-    },
+    email: ' ',
   };
   users: User[];
   showExtended: boolean = true;
@@ -31,12 +26,7 @@ export class UsersComponent implements OnInit {
       {
         firstName: 'Edwin',
         lastName: 'Estrella',
-        age: 25,
-        address: {
-          street: 'Calle Tamarindo',
-          city: 'San Antonio',
-          state: 'PR',
-        },
+        email: 'eestrella@example.com',
         isActive: true,
         registered: new Date('02/02/2018 17:00:00'),
         hide: true,
@@ -44,48 +34,30 @@ export class UsersComponent implements OnInit {
       {
         firstName: 'John',
         lastName: 'Smith',
-        age: 35,
-        address: {
-          street: 'Calle Palau',
-          city: 'Mayaguez',
-          state: 'PR',
-        },
+        email: 'jsmith@example.com',
         isActive: false,
         registered: new Date('03/12/2020 07:00:00'),
         hide: true,
       },
-      // {
-      //   firstName: 'David',
-      //   lastName: 'Valle',
-      // },
     ];
 
     this.loaded = true;
   }
 
-  addUser() {
-    this.user.isActive = true;
-    this.user.registered = new Date();
-    this.users.unshift(this.user);
+  // addUser() {
+  //   this.user.isActive = true;
+  //   this.user.registered = new Date();
+  //   this.users.unshift(this.user);
 
-    this.user = {
-      firstName: '',
-      lastName: '',
-      age: null,
-      address: {
-        street: '',
-        city: '',
-        state: '',
-      },
-    };
-  }
+  //   this.user = {
+  //     firstName: '',
+  //     lastName: '',
+  //     email: '',
+  //   };
+  // }
 
   onSubmit(e) {
     console.log(123);
     e.preventDefault();
   }
-
-  // toggleHide(user: User) {
-  //   user.hide = !user.hide;
-  // }
 }
