@@ -8,10 +8,20 @@ import { flatten } from '@angular/compiler';
   styleUrls: ['./users.component.css'],
 })
 export class UsersComponent implements OnInit {
+  user: User = {
+    firstName: '',
+    lastName: '',
+    age: null,
+    address: {
+      street: '',
+      city: '',
+      state: '',
+    },
+  };
   users: User[];
   showExtended: boolean = true;
   loaded: boolean = false;
-  enableAdd: boolean = true;
+  enableAdd: boolean = false;
   showUserForm: boolean = false;
 
   constructor() {}
@@ -51,24 +61,23 @@ export class UsersComponent implements OnInit {
     ];
 
     this.loaded = true;
-
-    this.addUser({
-      firstName: 'Joe',
-      lastName: 'Navarro',
-      age: 56,
-      address: {
-        street: '50th St',
-        city: 'New York City',
-        state: 'NY',
-      },
-      isActive: true,
-      registered: new Date('04/19/2020 15:50:00'),
-      hide: true,
-    });
   }
 
-  addUser(user: User) {
-    this.users.push(user);
+  addUser() {
+    this.user.isActive = true;
+    this.user.registered = new Date();
+    this.users.unshift(this.user);
+
+    this.user = {
+      firstName: '',
+      lastName: '',
+      age: null,
+      address: {
+        street: '',
+        city: '',
+        state: '',
+      },
+    };
   }
 
   onSubmit(e) {
