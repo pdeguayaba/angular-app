@@ -9,11 +9,11 @@ import { flatten } from '@angular/compiler';
 })
 export class UsersComponent implements OnInit {
   users: User[];
-  showExtended: boolean = true;
+  showExtended: boolean = !true;
   loaded: boolean = false;
   enableAdd: boolean = true;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     this.users = [
@@ -27,7 +27,7 @@ export class UsersComponent implements OnInit {
           state: 'PR',
         },
         isActive: true,
-        registered: new Date('02/02/2018 17:00:00')
+        registered: new Date('02/02/2018 17:00:00'),
       },
       {
         firstName: 'John',
@@ -39,7 +39,7 @@ export class UsersComponent implements OnInit {
           state: 'PR',
         },
         isActive: false,
-        registered: new Date('03/12/2020 07:00:00')
+        registered: new Date('03/12/2020 07:00:00'),
       },
       // {
       //   firstName: 'David',
@@ -59,7 +59,7 @@ export class UsersComponent implements OnInit {
         state: 'NY',
       },
       isActive: true,
-      registered: new Date('04/19/2020 15:50:00')
+      registered: new Date('04/19/2020 15:50:00'),
     });
   }
 
@@ -67,4 +67,7 @@ export class UsersComponent implements OnInit {
     this.users.push(user);
   }
 
+  fireEvent(e) {
+    console.log(e.type);
+  }
 }
