@@ -15,12 +15,7 @@ export class UserComponent implements OnInit {
     this.user = {
       firstName: 'Edwin',
       lastName: 'Estrella',
-      age: 25,
-      address: {
-        street: 'Calle Tamarindo',
-        city: 'San Antonio',
-        state: 'PR',
-      },
+      email: 'eestrella_wow@example.com',
     };
   }
 }
