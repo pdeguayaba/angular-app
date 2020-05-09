@@ -1,18 +1,10 @@
 <h2>Users</h2>
-<button
-  [disabled]="!enableAdd"
-  class="btn btn-block mb-3"
-  [ngClass]="currentClasses"
->
+<button [disabled]="!enableAdd" class="btn btn-block mb-3" [ngClass]="currentClasses">
   Add New User
 </button>
 <ul class="list-unstyled" *ngIf="loaded && users?.length > 0">
-  <li
-    class="card card-body mb-2"
-    *ngFor="let user of users"
-    [class.bg-light]="user.isActive"
-    [style.border-color]="user.isActive ? 'green' : ''"
-  >
+  <li class="card card-body mb-2" *ngFor="let user of users" [class.bg-light]="user.isActive"
+    [style.border-color]="user.isActive ? 'green' : ''">
     <div class="row">
       <div class="col-sm-4">
         <img *ngIf="user.image" class="img-fluid" [src]="user.image" alt="" />
@@ -29,6 +21,8 @@
             Address: {{ user.address.street }} {{ user.address.city }},
             {{ user.address.state }}
           </li>
+          <li class="list-group-item">Balance: {{ user.balance | currency }}</li>
+          <li class="list-group-item">Joined: {{ user.registered | date }}</li>
         </ul>
       </div>
     </div>

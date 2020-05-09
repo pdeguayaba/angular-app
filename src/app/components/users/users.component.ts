@@ -15,7 +15,7 @@ export class UsersComponent implements OnInit {
   currentClasses = {};
   currentStyles = {};
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
     this.users = [
@@ -30,6 +30,8 @@ export class UsersComponent implements OnInit {
         },
         image: 'https://rb.gy/1ecsgh',
         isActive: true,
+        balance: 100,
+        registered: new Date('02/02/2018 17:00:00')
       },
       {
         firstName: 'John',
@@ -40,8 +42,10 @@ export class UsersComponent implements OnInit {
           city: 'Mayaguez',
           state: 'PR',
         },
-        image: 'http://lorempixel.com/600/600/people/1',
+        image: 'https://rb.gy/b1homg',
         isActive: false,
+        balance: 500,
+        registered: new Date('03/12/2020 07:00:00')
       },
       // {
       //   firstName: 'David',
@@ -62,6 +66,8 @@ export class UsersComponent implements OnInit {
       },
       image: 'https://rb.gy/2imsoa',
       isActive: true,
+      balance: 40,
+      registered: new Date('04/19/2020 15:50:00')
     });
 
     this.setCurrentClasses();
