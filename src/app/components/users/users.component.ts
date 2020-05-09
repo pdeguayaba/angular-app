@@ -12,8 +12,6 @@ export class UsersComponent implements OnInit {
   showExtended: boolean = true;
   loaded: boolean = false;
   enableAdd: boolean = true;
-  currentClasses = {};
-  currentStyles = {};
 
   constructor() { }
 
@@ -28,9 +26,7 @@ export class UsersComponent implements OnInit {
           city: 'San Antonio',
           state: 'PR',
         },
-        image: 'https://rb.gy/1ecsgh',
         isActive: true,
-        balance: 100,
         registered: new Date('02/02/2018 17:00:00')
       },
       {
@@ -42,9 +38,7 @@ export class UsersComponent implements OnInit {
           city: 'Mayaguez',
           state: 'PR',
         },
-        image: 'https://rb.gy/b1homg',
         isActive: false,
-        balance: 500,
         registered: new Date('03/12/2020 07:00:00')
       },
       // {
@@ -64,31 +58,13 @@ export class UsersComponent implements OnInit {
         city: 'New York City',
         state: 'NY',
       },
-      image: 'https://rb.gy/2imsoa',
       isActive: true,
-      balance: 40,
       registered: new Date('04/19/2020 15:50:00')
     });
-
-    this.setCurrentClasses();
-    this.setCurrentStyles();
   }
 
   addUser(user: User) {
     this.users.push(user);
   }
 
-  setCurrentClasses() {
-    this.currentClasses = {
-      'btn-success': this.enableAdd,
-      'big-text': this.showExtended,
-    };
-  }
-
-  setCurrentStyles() {
-    this.currentStyles = {
-      'padding-top': this.showExtended ? '0' : '40px',
-      'font-size': this.showExtended ? '' : '40px',
-    };
-  }
 }
