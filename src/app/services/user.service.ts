@@ -9,7 +9,7 @@ export class UserService {
   users: User[];
   data: Observable<any>;
 
-  constructor() { 
+  constructor() {
     this.users = [
       {
         firstName: 'John',
@@ -17,7 +17,7 @@ export class UserService {
         email: 'john@gmail.com',
         isActive: true,
         registered: new Date('01/02/2018 08:30:00'),
-        hide: true
+        hide: true,
       },
       {
         firstName: 'Kevin',
@@ -25,7 +25,7 @@ export class UserService {
         email: 'kevin@yahoo.com',
         isActive: false,
         registered: new Date('03/11/2017 06:20:00'),
-        hide: true
+        hide: true,
       },
       {
         firstName: 'Karen',
@@ -33,13 +33,13 @@ export class UserService {
         email: 'karen@gmaial.com',
         isActive: true,
         registered: new Date('11/02/2016 10:30:00'),
-        hide: true
-      }
+        hide: true,
+      },
     ];
   }
 
   getData() {
-    this.data = new Observable(observer => {
+    this.data = new Observable((observer) => {
       setTimeout(() => {
         observer.next(1);
       }, 1000);
@@ -53,7 +53,7 @@ export class UserService {
       }, 3000);
 
       setTimeout(() => {
-        observer.next({name: 'Brad'});
+        observer.next({ name: 'Brad' });
       }, 4000);
     });
 
@@ -67,5 +67,4 @@ export class UserService {
   addUser(user: User) {
     this.users.unshift(user);
   }
-
 }

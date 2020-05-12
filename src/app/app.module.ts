@@ -12,7 +12,6 @@ import { PostService } from './services/post.service';
 import { PostsComponent } from './components/posts/posts.component';
 import { PostFormComponent } from './components/post-form/post-form.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,14 +19,10 @@ import { PostFormComponent } from './components/post-form/post-form.component';
     UsersComponent,
     NavbarComponent,
     PostsComponent,
-    PostFormComponent
+    PostFormComponent,
   ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpClientModule
-  ],
+  imports: [BrowserModule, FormsModule, HttpClientModule],
   providers: [UserService, PostService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
