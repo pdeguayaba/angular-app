@@ -1,46 +1,45 @@
 import { Injectable } from '@angular/core';
-import { User } from '../models/User';
-import { Observable } from 'rxjs-compat/Observable';
-import { of } from 'rxjs-compat/observable/of';
+import { Observable } from 'rxjs/Observable';
+import { of } from 'rxjs/observable/of';
 
-@Injectable({
-  providedIn: 'root',
-})
+import { User } from '../models/User';
+
+@Injectable()
 export class UserService {
   users: User[];
   data: Observable<any>;
 
-  constructor() {
+  constructor() { 
     this.users = [
       {
-        firstName: 'Edwin',
-        lastName: 'Estrella',
-        email: 'eestrella@example.com',
+        firstName: 'John',
+        lastName: 'Doe',
+        email: 'john@gmail.com',
         isActive: true,
-        registered: new Date('02/02/2018 17:00:00'),
-        hide: true,
+        registered: new Date('01/02/2018 08:30:00'),
+        hide: true
       },
       {
-        firstName: 'John',
-        lastName: 'Smith',
-        email: 'jsmith@example.com',
+        firstName: 'Kevin',
+        lastName: 'Johnson',
+        email: 'kevin@yahoo.com',
         isActive: false,
-        registered: new Date('03/12/2020 07:00:00'),
-        hide: true,
+        registered: new Date('03/11/2017 06:20:00'),
+        hide: true
       },
+      {
+        firstName: 'Karen',
+        lastName: 'Williams',
+        email: 'karen@gmaial.com',
+        isActive: true,
+        registered: new Date('11/02/2016 10:30:00'),
+        hide: true
+      }
     ];
   }
 
-  getUsers(): Observable<User[]> {
-    return of(this.users);
-  }
-
-  addUser(user: User) {
-    this.users.unshift(user);
-  }
-
   getData() {
-    this.data = new Observable((observer) => {
+    this.data = new Observable(observer => {
       setTimeout(() => {
         observer.next(1);
       }, 1000);
@@ -52,7 +51,21 @@ export class UserService {
       setTimeout(() => {
         observer.next(3);
       }, 3000);
+
+      setTimeout(() => {
+        observer.next({name: 'Brad'});
+      }, 4000);
     });
+
     return this.data;
   }
+
+  getUsers(): Observable<User[]> {
+    return of(this.users);
+  }
+
+  addUser(user: User) {
+    this.users.unshift(user);
+  }
+
 }
